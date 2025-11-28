@@ -146,7 +146,7 @@ command.cob = function(arg1,arg2,arg3=0,arg4=0)
 		o.push(colorCyan+"</b>cob: validating custom object...")
 		if not cobble.hasIndex("macros") then; cobble.macros = {};o.push(colorOrange+"<size=75%>--: restoring index: macros");end if
 		if not cobble.hasIndex("stack_pool") then; cobble.stack_pool = 0;o.push(colorOrange+"<size=75%>--: restoring index: stack_pool");end if
-		if not cobble.hasIndex("HOME") or not cobble.HOME isa map then ; cobble.HOME = {"ip":"ip.add.rr.ess", "loginport":22, "rshellport":1222, "user":"root", "pass":"password", "loginprotocol":"ssh", "sharedfile":"/root/pass","database":"/root/rkit/database.csv", "t5":"/root/rkit/tables/t5", "tp":"/root/rkit/tables/tp"};end if
+		if not cobble.hasIndex("HOME") or not cobble.HOME isa map then ; cobble.HOME = {"ip": #envar HOME_IP, "loginport":22, "rshellport":6262, "user": #envar HOME_USER, "pass": #envar HOME_PSWD, "loginprotocol":"ssh", "sharedfile":"/root/pass","database":"/root/rkit/database.csv", "t5":"/root/rkit/tables/t5", "tp":"/root/rkit/tables/tp"};end if
 		// nested cobble.HOME validation needed
 		return o.join(char(10))
 	end function
